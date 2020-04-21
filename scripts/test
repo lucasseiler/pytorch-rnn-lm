@@ -1,0 +1,11 @@
+#! /bin/bash
+
+scripts=`dirname "$0"`
+base=$(realpath $scripts/..)
+
+models=$base/models
+data=$base/data
+tools=$base/tools
+echo $scripts
+echo $base
+echo $tools

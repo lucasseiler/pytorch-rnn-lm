@@ -1,0 +1,5 @@
+./scripts/train.sh: line 4: realpath: command not found
+mkdir: /models: Read-only file system
+./scripts/train.sh: line 17: cd: /tools/pytorch-examples/word_language_model: No such file or directory
+time taken:
+0 seconds
