@@ -5,13 +5,13 @@ We took the transcripts from season 3, 5, 6, and 8 of the TV-series FRIENDS to t
 The data was obtainted from https://github.com/emorynlp/character-mining/tree/master/json and saved in data/raw.
 
 ## Preprocessing
-As the transcripts were in json, the data had to be converted to .txt using scripts/read_json.py (for each series corpus separatley) and concatenated to one file (data/raw/friends.txt). This file was then preprocessed using ```./scripts/prepare_friends_data.sh``` (an adapted version of scripts/download_data.sh). As the segments in our corpus are quite short, we chose to indrease the number of training segments to 7000.
+As the transcripts were in json, the data had to be converted to .txt using ```scripts/read_json.py``` (for the corpus of each season separately; each season name has to be inputted manually) and concatenated to one file (```data/raw/friends.txt```). This file was then preprocessed using ```./scripts/prepare_friends_data.sh``` (an adapted version of scripts/download_data.sh). As the segments in our corpus are quite short, we chose to indrease the number of training segments to 7000.
 
-The ready-to-train data is stored under data/friends_clean.
+The ready-to-train data is stored under ```data/friends_clean```.
 
 ## Training
 
-We chose dropout for our parameter experiment and trained 8 models using ```./scripts/train.sh```
+We chose dropout for our parameter experiment and trained 8 models using ```./scripts/train.sh```.
 
  | Dropout | test loss | test ppl | 
  | :---: | :---: | :---: | 
@@ -29,10 +29,10 @@ The models in the models folder are numbered according to their dropout paramete
 
 ## Generating
 
-Generation of text was done by ```./scripts/generation.sh```
+Generation of text was done by ```./scripts/generation.sh```.
 
 
->**300 words on dropout of 0.45**:
+>**300 words on dropout of 0.45 (```sample045.txt```)**:
 her . It &apos;s not going to be unreasonable . <eos> I swear that out honey , there is that
 okay who Ross and someone took you <unk> a expecting , but what is going on ? <eos> Well ,
 you should just shut your floating <unk> . No right now , we-we &apos;re just my son dress at the
