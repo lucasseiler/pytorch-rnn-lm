@@ -14,17 +14,25 @@ The ready-to-train data is stored under data/friends_clean.
 We chose dropout for our parameter experiment and trained 8 models.
 
 |Dropout| test loss|test ppl|
+| :---: | :---: | :---: | 
 |0.9|4.77|117.69|
+| :---: | :---: | :---: |
 |0.7|4.25|69.83|
+| :---: | :---: | :---: |
 |0.5|4.15|63.54|
+| :---: | :---: | :---: |
 |0.45|4.15|63.55|
+| :---: | :---: | :---: |
 |0.4|4.15|63.72|
+| :---: | :---: | :---: |
 |0.3|4.17|64.44|
+| :---: | :---: | :---: |
 |0.1|4.21|67.12|
+| :---: | :---: | :---: |
 |0.0|4.30|73.89|
 
-Interestingly, the default setting of 0.5 turned out to be the best.
-The models are numbered according to their dropout parameter (model07.pt was trained on a dropout of 0.7).
+Interestingly, the default setting of 0.5 turned out lead to the lowest test perplexity.
+The models in the models folder are numbered according to their dropout parameter (model07.pt was trained on a dropout of 0.7).
 
 ## Generating
 
@@ -45,11 +53,12 @@ why I was talking about London . <eos> So this is such a baby . I was across the
 when I have no pathetic for me . <eos> No , y &apos;know what ? And imagine , all it
 out with that <unk> , then then I want marriage to <unk> , high year ... We will so watch
 
-All in all, the generated text is reminiscent of actual FRIENDS dialogs. We can see everal key words and topics being mentioned. As the dialogs in the show are quite short, the generated sentences also only consist of a few words. The "&apos" tags are not very nice and could be dealt with during preprocessing.
+All in all, the generated text is reminiscent of actual FRIENDS dialogs. We can see everal key words and topics being mentioned. As the dialogs in the show are quite short, the generated sentences also only consist of a few words. The "&apos" tags in the raw output are not very nice and could be dealt with during preprocessing.
 
 ## Room for improvement
-As mentioned above, preprocessing could be optimized to avoid "&apos" tags in the output.
+As mentioned above, preprocessing could be optimized to avoid "&apos" tags in the raw output.
 Greedy decoding is implemented; however, it would be interesting to choose a starting word of the text.
+
 
 
 
