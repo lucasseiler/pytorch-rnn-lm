@@ -53,7 +53,7 @@ All in all, the generated text is reminiscent of actual FRIENDS dialogs. We can 
 
 ## Experiments with greedy search
 
-Text generation has also been tested using *greedy search* (implemented in https://github.com/lucasseiler/examples).
+Text generation has also been successfully tested using *greedy search* (implemented in https://github.com/lucasseiler/examples).
 
 
 # Original Documentation
