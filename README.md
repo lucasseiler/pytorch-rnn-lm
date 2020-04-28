@@ -24,7 +24,7 @@ We chose dropout for our parameter experiment and trained 8 models using ```./sc
  | 0.1 | 4.21 | 67.12 | 
  | 0.0 | 4.30 | 73.89 | 
 
-Interestingly, the default setting of 0.5 turned out lead to the lowest test perplexity. Although a dropout of 0.5 seems to generally be a recommended setting, it is still somewhat surprising, that this model really is the performing of all 8 models.
+Interestingly, the default setting of 0.5 turned out lead to the lowest test perplexity. Although a dropout of 0.5 seems to generally be a recommended setting, it is still somewhat surprising, that this model really is the best performing of all 8 models.
 
 ## Generating
 
