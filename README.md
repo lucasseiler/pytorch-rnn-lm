@@ -5,13 +5,13 @@ We took the transcripts from season 3, 5, 6, and 8 of the TV-series FRIENDS to t
 The data was obtainted from https://github.com/emorynlp/character-mining/tree/master/json and saved in data/raw.
 
 ## Preprocessing
-As the transcripts were in json, the data had to be converted to .txt using scripts/read_json.py and concatenated to one file (data/raw/friends.txt). This file was then preprocessed using prepare_friends_data.sh (an adapted version of download_data.sh). As the segments in our corpus are quite short, we chose to indrease the number of training segments to 7000.
+As the transcripts were in json, the data had to be converted to .txt using scripts/read_json.py (for each series corpus separatley) and concatenated to one file (data/raw/friends.txt). This file was then preprocessed using scripts/prepare_friends_data.sh (an adapted version of download_data.sh). As the segments in our corpus are quite short, we chose to indrease the number of training segments to 7000.
 
 The ready-to-train data is stored under data/friends_clean.
 
 ## Training
 
-We chose dropout for our parameter experiment and trained 8 models.
+We chose dropout for our parameter experiment and trained 8 models using /scripts/train.
 
  | Dropout | test loss | test ppl | 
  | :---: | :---: | :---: | 
@@ -51,9 +51,6 @@ All in all, the generated text is reminiscent of actual FRIENDS dialogs. We can 
 ## Room for improvement
 As mentioned above, preprocessing could be optimized to avoid "&apos" tags in the raw output.
 Greedy decoding is implemented; however, it would be interesting to choose a starting word of the text.
-
-
-
 
 
 # Original Documentation
