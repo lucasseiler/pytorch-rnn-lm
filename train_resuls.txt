@@ -1,0 +1,8 @@
+0.9:  | End of training | test loss  4.77 | test ppl   117.69
+0.7:  | End of training | test loss  4.25 | test ppl    69.83
+0.5:  | End of training | test loss  4.15 | test ppl    63.54
+0.45: | End of training | test loss  4.15 | test ppl    63.55
+0.4:  | End of training | test loss  4.15 | test ppl    63.72
+0.3:  | End of training | test loss  4.17 | test ppl    64.44
+0.1:  | End of training | test loss  4.21 | test ppl    67.12
+0.0:  | End of training | test loss  4.30 | test ppl    73.89
