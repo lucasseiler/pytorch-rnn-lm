@@ -5,13 +5,13 @@ We took the transcripts from season 3, 5, 6, and 8 of the TV-series FRIENDS to t
 The data was obtainted from https://github.com/emorynlp/character-mining/tree/master/json and saved in data/raw.
 
 ## Preprocessing
-As the transcripts were in json, the data had to be converted to .txt using scripts/read_json.py (for each series corpus separatley) and concatenated to one file (data/raw/friends.txt). This file was then preprocessed using scripts/prepare_friends_data.sh (an adapted version of download_data.sh). As the segments in our corpus are quite short, we chose to indrease the number of training segments to 7000.
+As the transcripts were in json, the data had to be converted to .txt using scripts/read_json.py (for each series corpus separatley) and concatenated to one file (data/raw/friends.txt). This file was then preprocessed using ```./scripts/prepare_friends_data.sh``` (an adapted version of scripts/download_data.sh). As the segments in our corpus are quite short, we chose to indrease the number of training segments to 7000.
 
 The ready-to-train data is stored under data/friends_clean.
 
 ## Training
 
-We chose dropout for our parameter experiment and trained 8 models using /scripts/train.
+We chose dropout for our parameter experiment and trained 8 models using ```./scripts/train.sh```
 
  | Dropout | test loss | test ppl | 
  | :---: | :---: | :---: | 
@@ -28,6 +28,9 @@ Interestingly, the default setting of 0.5 turned out lead to the lowest test per
 The models in the models folder are numbered according to their dropout parameter (model07.pt was trained on a dropout of 0.7).
 
 ## Generating
+
+Generation of text was done by ```./scripts/generation.sh```
+
 
 >**300 words on dropout of 0.45**:
 her . It &apos;s not going to be unreasonable . <eos> I swear that out honey , there is that
