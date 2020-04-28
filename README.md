@@ -5,7 +5,7 @@ We took the transcripts from season 3, 5, 6, and 8 of the TV-series FRIENDS to t
 The data was obtainted from https://github.com/emorynlp/character-mining/tree/master/json and saved in data/raw.
 
 ## Preprocessing
-As the transcripts were in json, the data had to be converted to .txt using ```scripts/read_json.py``` (for the corpus of each season separately; each season name has to be inputted manually) and concatenated to one file (```data/raw/friends.txt```). This file was then preprocessed using ```./scripts/prepare_friends_data.sh``` (an adapted version of scripts/download_data.sh). As the segments in our corpus are quite short, we chose to indrease the number of training segments to 7000.
+As the transcripts were in json, the data had to be converted to .txt using ```scripts/read_json.py``` (for the corpus of each season separately; each season name has to be inputted manually) and concatenated to one file (```data/raw/friends.txt```). This file was then preprocessed using ```./scripts/prepare_friends_data.sh``` (an adapted version of ```scripts/download_data.sh```). As the segments in our corpus are quite short, we chose to indrease the number of training segments to 7000.
 
 The ready-to-train data is stored under ```data/friends_clean```.
 
