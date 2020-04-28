@@ -17,8 +17,8 @@ SECONDS=0
 (cd $tools/pytorch-examples/word_language_model &&
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python3 main.py --data $data/friends_clean \
         --epochs 40 \
-        --emsize 200 --nhid 200 --dropout 0.5 --tied \
-        --save $models/model.pt
+        --emsize 200 --nhid 200 --dropout 0.45 --tied \
+        --save $models/model045.pt
 )
 
 echo "time taken:"
