@@ -1,8 +1,66 @@
-# Pytorch RNN Language Models
+# Exercise Documentation
+
+## Data
+We took the transcripts from season 3, 5, 6, and 8 of the TV-series FRIENDS to train our model.
+The data was obtainted from https://github.com/emorynlp/character-mining/tree/master/json and saved in data/raw.
+
+## Preprocessing
+As the transcripts were in json, the data had to be converted to .txt using scripts/read_json.py and concatenated to one file (data/raw/friends.txt). This file was then preprocessed using prepare_friends_data.sh (an adapted version of download_data.sh). As the segments in our corpus are quite short, we chose to indrease the number of training segments to 7000.
+
+The ready-to-train data is stored under data/friends_clean.
+
+## Training
+
+We chose dropout for our parameter experiment and trained 8 models.
+
+|Dropout| test loss|test ppl|
+|0.9|4.77|117.69|
+|0.7|4.25|69.83|
+|0.5|4.15|63.54|
+|0.45|4.15|63.55|
+|0.4|4.15|63.72|
+|0.3|4.17|64.44|
+|0.1|4.21|67.12|
+|0.0|4.30|73.89|
+
+Interestingly, the default setting of 0.5 turned out to be the best.
+The models are numbered according to their dropout parameter (model07.pt was trained on a dropout of 0.7).
+
+## Generating
+
+>**300 words on dropout of 0.45**:
+her . It &apos;s not going to be unreasonable . <eos> I swear that out honey , there is that
+okay who Ross and someone took you <unk> a expecting , but what is going on ? <eos> Well ,
+you should just shut your floating <unk> . No right now , we-we &apos;re just my son dress at the
+decision . <unk> at your house &apos; shop in a head ! And wink , oh ... It was just
+someone in the right I &apos;ll pick you on her . <eos> You think you &apos;ve made out of candy
+? <eos> I &apos;m thinking . Maybe you were there from Valentine &apos;s impulsive . Oh , at you thought
+to eat the time . It &apos;s really gonna have them so cute enough . <eos> Ross , are you
+ready ? ! <eos> I &apos;m sorry ! <eos> Hey ! God I know ! This is my small story
+? ! Look , that &apos;s a a million thing ! <eos> Yeah ! <eos> But ... Here was nice
+in over here , <unk> if you need around to me over with slip fun ! I mean I never
+wanted some hormones do . <eos> Annie ? shaving ? <eos> Open late . <eos> So where was that ?
+<eos> Umm , thank you . Oh , I &apos;m so happy ! I tried the ring to tell me
+why I was talking about London . <eos> So this is such a baby . I was across these ring
+when I have no pathetic for me . <eos> No , y &apos;know what ? And imagine , all it
+out with that <unk> , then then I want marriage to <unk> , high year ... We will so watch
+
+All in all, the generated text is reminiscent of actual FRIENDS dialogs. We can see everal key words and topics being mentioned. As the dialogs in the show are quite short, the generated sentences also only consist of a few words. The "&apos" tags are not very nice and could be dealt with during preprocessing.
+
+## Room for improvement
+As mentioned above, preprocessing could be optimized to avoid "&apos" tags in the output.
+Greedy decoding is implemented; however, it would be interesting to choose a starting word of the text.
+
+
+
+
+# Original Documentation
+
+## Pytorch RNN Language Models
 
 This repo shows how to train neural language models using [Pytorch example code](https://github.com/pytorch/examples/tree/master/word_language_model).
 
-# Requirements
+## Requirements
 
 - This only works on a Unix-like system, with bash.
 - Python 3 must be installed on your system, i.e. the command `python3` must be available
@@ -10,7 +68,7 @@ This repo shows how to train neural language models using [Pytorch example code]
 
     `pip install virtualenv`
 
-# Steps
+## Steps
 
 Clone this repository in the desired place:
 
