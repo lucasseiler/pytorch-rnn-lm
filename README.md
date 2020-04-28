@@ -51,6 +51,10 @@ out with that <unk> , then then I want marriage to <unk> , high year ... We will
 
 All in all, the generated text is reminiscent of actual FRIENDS dialogs. We can see everal key words and topics being mentioned. As the dialogs in the show are quite short, the generated sentences also only consist of a few words. The "&apos" tags in the raw output are not very nice and could be dealt with during preprocessing.
 
+# Experiments with greedy search
+
+Text generation has also been tested using *greedy search* implemented in https://github.com/lucasseiler/examples.
+
 
 # Original Documentation
 
